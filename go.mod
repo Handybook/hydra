@@ -17,6 +17,7 @@ require (
 	github.com/meatballhat/negroni-logrus v0.0.0-20170801195057-31067281800f
 	github.com/mendsley/gojwk v0.0.0-20141217222730-4d5ec6e58103
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
+	github.com/newrelic/go-agent v2.2.0+incompatible // indirect
 	github.com/oleiade/reflections v1.0.0
 	github.com/opentracing/opentracing-go v1.0.2
 	github.com/ory/dockertest v3.3.2+incompatible

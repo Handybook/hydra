@@ -25,10 +25,16 @@ package main
 import (
 	"github.com/ory/hydra/cmd"
 	"github.com/ory/x/profilex"
+	"github.com/newrelic/go-agent"
+	"os"
 )
 
 func main() {
 	defer profilex.Profile().Stop()
+
+	config := newrelic.NewConfig("hydra", os.Getenv("NEWRELIC_KEY"))
+	config.Enabled = os.Getenv("KUBE_ENVIRONMENT") == "production"
+	app, err := newrelic.NewApplication(config)
 
 	cmd.Execute()
 }
