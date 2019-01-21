@@ -32,7 +32,7 @@ import (
 func main() {
 	defer profilex.Profile().Stop()
 
-	config := newrelic.NewConfig("hydra", os.Getenv("NEWRELIC_KEY"))
+	config := newrelic.NewConfig("hydra", "bcc28e299818f07c28b71493458b89c072e274b9")
 	config.Enabled = os.Getenv("KUBE_ENVIRONMENT") == "production"
 	app, err := newrelic.NewApplication(config)
 
