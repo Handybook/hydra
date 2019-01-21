@@ -34,7 +34,11 @@ func main() {
 
 	config := newrelic.NewConfig("hydra", "bcc28e299818f07c28b71493458b89c072e274b9")
 	config.Enabled = os.Getenv("KUBE_ENVIRONMENT") == "production"
-	app, err := newrelic.NewApplication(config)
+	_, err := newrelic.NewApplication(config)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 
 	cmd.Execute()
 }
