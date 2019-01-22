@@ -27,6 +27,7 @@ import (
 	"github.com/ory/x/profilex"
 	"github.com/newrelic/go-agent"
 	"os"
+	"fmt"
 )
 
 func main() {
